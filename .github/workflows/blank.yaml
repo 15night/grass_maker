@@ -19,7 +19,7 @@ jobs:
           echo test, and deploy your project.
           git config user.name ${NAME}
           git config user.email ${MAIL}
-          git remote set-url origin https://${NAME}:${{ secrets.PASS }}@github.com/${NAME}/${REPO}
+          git remote set-url origin https://${NAME}:${{ secrets.PASS }}@github.com/${NAME}/${REPO}.git
           git branch
           git checkout master
           git branch
@@ -27,8 +27,7 @@ jobs:
           git add .
           git commit -m "update!"
           git push origin master
-          ${{ secrets.PASS }
         env:
           NAME: 15night
-          REPO: glass_maker
+          REPO: grass_maker
           MAIL: ${{ secrets.MAIL }}
