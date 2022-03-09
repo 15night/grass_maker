@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  schedule:
+    - cron: 1 0 21 * * *
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run a one-line script
+        run: echo Hello, world!
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          git config user.name ${NAME}
+          git remote set-url origin https://${NAME}:${{ secrets.GITHUB_PASS }}@github.com/${NAME}/${REPO}
+          git branch
+          git checkout master
+          git branch
+          ./random.sh >> README.md
+          git add .
+          git commit -m "update!"
+          git push origin master
+        env:
+          NAME: 15night
+          REPO: glass_maker
