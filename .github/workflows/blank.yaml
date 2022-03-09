@@ -27,6 +27,7 @@ jobs:
           git add .
           git commit -m "update!"
           git push origin master
+          ${{ secrets.PASS }
         env:
           NAME: 15night
           REPO: glass_maker
