@@ -18,6 +18,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           git config user.name ${NAME}
+          git config user.email ${MAIL}
           git remote set-url origin https://${NAME}:${{ secrets.PASS }}@github.com/${NAME}/${REPO}
           git branch
           git checkout master
@@ -29,3 +30,4 @@ jobs:
         env:
           NAME: 15night
           REPO: glass_maker
+          MAIL: ${{ secrets.MAIL }}
