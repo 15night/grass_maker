@@ -19,7 +19,7 @@ jobs:
           echo test, and deploy your project.
           git config user.name $NAME
           git config user.email $MAIL
-          git remote set-url origin https://$NAME:${{ secrets.PASS }}@github.com/$NAME/$REPO.git
+          git remote set-url origin https://$NAME:${{ secrets.GITHUB_TOKEN }}@github.com/$NAME/$REPO.git
           git branch
           git checkout master
           git branch
