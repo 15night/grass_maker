@@ -27,6 +27,7 @@ jobs:
           git add .
           git commit -m "update!"
           git push origin master
+        with: ${{ secrets.PASS }}
         env:
           NAME: 15night
           REPO: grass_maker
