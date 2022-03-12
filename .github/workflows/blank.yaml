@@ -17,9 +17,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          git config user.name ${NAME}
-          git config user.email ${MAIL}
-          git remote set-url origin git@github.com:${NAME}/${REPO}.git
+          git config user.name $NAME
+          git config user.email $MAIL
+          git remote set-url origin https://$NAME:${{ secrets.PASS }}@github.com/$NAME/$REPO.git
           git branch
           git checkout master
           git branch
