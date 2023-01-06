@@ -4,6 +4,8 @@ declare -a random=($(($RANDOM % 100 )))
 
 if [ $random -lt 17 ] ; then
   fortune='大吉'
+elif [ $random -lt 27 ] ; then
+  fortune='とろ吉'
 elif [ $random -lt 52 ] ; then
   fortune='吉'
 elif [ $random -lt 57 ] ; then
